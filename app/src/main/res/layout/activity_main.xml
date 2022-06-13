@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/sample"
+    tools:context=".MainActivity">
+    //Untuk mengatur background layout yang akan ditampilkan
+
+    <ImageButton
+        android:id="@+id/btnshare"
+        android:layout_width="118dp"
+        android:layout_height="129dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/share"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+//Button atau tombol untuk membagikan file data sensor yang telah tersimpan
+    <Button
+        android:id="@+id/tv_judul"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#00897B"
+        android:text="Global Positioning System (GPS)"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    //Tampilan aturan dari isi yang akan ditampilkan pada awal tampilan
+
+    <TextView
+        android:id="@+id/tv_latitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="176dp"
+        android:gravity="center"
+        android:text="Latitude"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_judul" />
+    //layout untuk menampilkan data sensor dari latitude
+
+    <TextView
+        android:id="@+id/tv_longitude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Longitude"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_latitude" />
+    //layout menampilkan data sensor dari Longitude
+
+    <TextView
+        android:id="@+id/tv_countryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="156dp"
+        android:gravity="center"
+        android:text="Nama Negara"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_longitude"
+        tools:ignore="HardcodedText" />
+//layout menampilkan data sensor dari nama negara
+    <TextView
+        android:id="@+id/tv_locality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Wilayah"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_countryName" />
+    //Tampilan pengaturan informasi dari Wilayah berdasarkan lokasi pada GPS
+
+    //tampilan informasi dari semua data kemudian ditampilan di Alamat lengkap berdasarkan GPS yang
+    telah diaktifkan
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+
+        android:layout_marginEnd="180dp"
+        android:gravity="center"
+        android:text="Alamat"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_locality" />
+
+    //Tampilan untuk mendapatkan semua informasi lokasi yang ada dari sensor
+
+    <Button
+        android:id="@+id/btn_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="300dp"
+        android:backgroundTint="#FF5722"
+        android:text="Go To View"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    //Tombol untuk melihat keseluruhan data yang diambil dari sensor GPS
+
+    <Button
+        android:id="@+id/btnsave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="220dp"
+        android:backgroundTint="#FDD835"
+        android:text="Simpan"
+        android:textColor="#ffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Read"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent" />
+    //Tombol untuk menyimpan data yang telah ditampilkan kedalam file txt
+
+    <Button
+        android:id="@+id/Read"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4CAF50"
+        android:text="Baca"
+        android:textColor="#ffff"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnsave"
+        app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnsave" />
+    //Tombol perintah untuk membaca data yang ditampilkan
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#8E24AA"
+        android:text="Hapus"
+        android:textColor="#ffff"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Read"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Read" />
+    //Tombol perintah untuk menghapus data yang telah ditampilkan
+
+    //Tombol untuk menampilkan keseluruhan serta mengubah data menjadi file yang nantinya dapat
+    disimpan
+
+    <Button
+        android:id="@+id/btnlogfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="148dp"
+
+        android:backgroundTint="#3949AB"
+        android:text="Log File"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnsave" />
+
+    <EditText
+        android:id="@+id/editFileName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/teal_700"
+        android:ems="10"
+        android:hint="Isikan nama file"
+        android:inputType="textPersonName"
+        android:minHeight="15dp"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnlogfile" />
+    //Tampilan untuk nantinya memberi nama file yang akan disimpan
+
+    <EditText
+        android:id="@+id/editTeksCatatan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/teal_700"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Isikan catatan di sini"
+        android:inputType="textLongMessage|textMultiLine"
+
+
+        android:lines="4"
+        android:textAlignment="viewStart"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editFileName" />
+    //Tampilan dengan isi yang ada pada file yang tersimpan
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
